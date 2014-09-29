@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background: #4DD0E1;
+}
+h1 {
+    font-weight: normal;
+    font-size: 2em;
+    margin: 20px 0;
+}
+h1 strong {
+    color:  #4DD0E1;
+    font-weight: normal;
+}
+.content {
+    background: #FAFAFA;
+    border: 1px solid #FEFEFE;
+    border-bottom: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    border-radius: 2px;
+    margin: 30px;
+    padding: 30px;
+}
+
+.email-form {
+    position: relative;
+    margin: 10px 0;
+    padding-right: 80px;
+}
+.email-form label {
+    display: none;
+}
+.email-form .email {
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #C8C8C8;
+    margin-bottom: 1px;
+    font-size: 0.8em;
+}
+.email-form .email:focus {
+    border-bottom: 2px solid #4DD0E1;
+    margin-bottom: 0;
+    outline: none;
+}
+.email-form .submit {
+    border: 1px solid #4DD0E1;
+    background: #4DD0E1;
+    color: #FFF;
+    padding: 5px 10px;
+    width: 50px;
+    font-size: 0.8em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+.email-form .submit:hover,
+.email-form .submit:focus {
+    border: 1px solid #4DD0E1;
+    outline: none;
+}
+.email-form .submit:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    margin: 0 20px 30px;
+    border: 1px solid #FEFEFE;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    transform: rotate(-10deg);
+}
