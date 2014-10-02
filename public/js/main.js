@@ -46,8 +46,8 @@ require([
 
     window.addEventListener('popstate', function(e) {
         var state = e.state || {};
-        if (state.email) {
-            getUser(state.email);
+        if (state.getUser) {
+            getUser(state.getUser);
         } else {
             routes.render(window.location.pathname, state);
         }
@@ -68,8 +68,11 @@ require([
         if (emailEl) {
             var email = emailEl.value;
             e.preventDefault();
-            window.history.pushState({
+            window.history.replaceState({
                 email: email
+            }, '', '/');
+            window.history.pushState({
+                getUser: email
             }, '', '/hello?email=' + encodeURIComponent(email));
             getUser(email);
         }
