@@ -8,9 +8,11 @@
         <title>Shared Templates</title>
     </head>
     <body>
-        <section class="content">
-            {{{ yield }}}
-        </section>
+        <div class="wrap">
+            <section class="content">
+                {{{ yield }}}
+            </section>
+        </div>
 
         <script src="/js/lib/requirejs/requirejs.js"></script>
         <script>

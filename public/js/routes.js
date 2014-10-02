@@ -11,18 +11,23 @@ define([
         '/': form,
         '/hello': hello
     };
-    var content = document.querySelector('.content');
+    var wrap = document.querySelector('.wrap');
+    var content = wrap.querySelector('.content');
 
     return {
-        render: function(url, data) {
+        render: function(path, data) {
             data = data || {};
-            content.innerHTML = routes[url](data);
+            wrap.className += ' animate-out';
+            setTimeout(function() {
+                content.innerHTML = routes[path](data);
+                wrap.className = wrap.className.replace('animate-out', '');
+            }, 500);
         },
         loading: function() {
             content.innerHTML = loading();
         },
-        has: function(url) {
-            return routes[url] ? true : false;
+        has: function(path) {
+            return routes[path] ? true : false;
         },
 
     };

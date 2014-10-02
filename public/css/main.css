@@ -1,7 +1,6 @@
 body {
     font-family: sans-serif;
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 10px;
     text-align: center;
     background: #4DD0E1;
 }
@@ -14,13 +13,23 @@ h1 strong {
     color:  #4DD0E1;
     font-weight: normal;
 }
+.wrap {
+    transition: transform 0.5s ease;
+    transform: translateX(0) rotate(0deg);
+}
+.wrap.animate-out {
+    transform: translateX(-140%) rotate(-30deg);
+}
 .content {
+    position: relative;
+    min-height: 250px;
+    max-width: 350px;
     background: #FAFAFA;
     border: 1px solid #FEFEFE;
     border-bottom: none;
     box-shadow: 0 2px 5px rgba(0,0,0,0.25);
     border-radius: 2px;
-    margin: 30px;
+    margin: 20px auto;
     padding: 30px;
 }
 .btn {
@@ -49,14 +58,20 @@ h1 strong {
 }
 .error {
     color: #EB3941;
+    margin-bottom: -35px;
 }
 .loading {
-    margin: 30px 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -20px;
+    font-size: 1.5em;
 }
 
 .email-form {
     position: relative;
-    margin: 10px 0;
+    margin: 80px 0;
     padding-right: 80px;
 }
 .email-form label {
@@ -85,7 +100,7 @@ h1 strong {
 .profile img {
     width: 100px;
     height: 100px;
-    margin: 0 20px 30px;
+    margin: 0 20px 20px;
     border: 1px solid #FEFEFE;
     box-shadow: 0 2px 5px rgba(0,0,0,0.25);
     transform: rotate(-10deg);

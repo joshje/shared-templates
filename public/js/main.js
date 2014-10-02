@@ -19,6 +19,7 @@ require([
 ) {
     var content = document.querySelector('.content');
     var users = {};
+    var imageSize = (window.devicePixelRatio > 1.5) ? 400 : 200;
 
     var getUser = function(email) {
         var hash = md5(email.replace(/^\s+|\s+$/g, ''));
@@ -28,8 +29,13 @@ require([
         routes.loading();
         ajax(url, function(res) {
             var user = res.entry[0];
+            user.thumbnailUrl += '?s=' + imageSize;
             users[hash] = user;
-            routes.render('/hello', user);
+            var img = document.createElement('img');
+            img.addEventListener('load', function() {
+                routes.render('/hello', user);
+            });
+            img.src = user.thumbnailUrl;
         }, function() {
             routes.render('/', {
                 error: true,
