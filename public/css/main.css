@@ -23,6 +23,36 @@ h1 strong {
     margin: 30px;
     padding: 30px;
 }
+.btn {
+    border: 1px solid #4DD0E1;
+    background: #4DD0E1;
+    color: #FFF;
+    padding: 5px 10px;
+    width: 50px;
+    font-size: 0.8em;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.btn:hover,
+.btn:focus {
+    border: 1px solid #4DD0E1;
+    outline: none;
+}
+.btn:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+.btn:active {
+    box-shadow: none;
+}
+.error {
+    color: #EB3941;
+}
+.loading {
+    margin: 30px 0;
+}
 
 .email-form {
     position: relative;
@@ -47,27 +77,9 @@ h1 strong {
     outline: none;
 }
 .email-form .submit {
-    border: 1px solid #4DD0E1;
-    background: #4DD0E1;
-    color: #FFF;
-    padding: 5px 10px;
-    width: 50px;
-    font-size: 0.8em;
     position: absolute;
     right: 0;
     top: 0;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 2px;
-    text-transform: uppercase;
-}
-.email-form .submit:hover,
-.email-form .submit:focus {
-    border: 1px solid #4DD0E1;
-    outline: none;
-}
-.email-form .submit:hover {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
 }
 
 .profile img {

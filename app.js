@@ -23,11 +23,10 @@ app.get('/hello', function(req, res) {
         headers: { 'User-Agent': 'Node' }
     }, function (err, response, body) {
         if (err || response.statusCode !== 200) {
-            var message = err ? err.message : body;
             res.status(response.statusCode);
-            res.render('error', {
-                code: response.statusCode,
-                message: message
+            res.render('form', {
+                error: true,
+                email: email
             });
         } else {
             var json = JSON.parse(body);

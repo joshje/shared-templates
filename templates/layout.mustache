@@ -11,5 +11,16 @@
         <section class="content">
             {{{ yield }}}
         </section>
+
+        <script src="/js/lib/requirejs/requirejs.js"></script>
+        <script>
+        if ('querySelector' in document
+            && 'localStorage' in window
+            && 'pushState' in history
+            && 'addEventListener' in window) {
+            document.body.className += ' js';
+            require(['/js/main.js']);
+        }
+        </script>
     </body>
 </html>
