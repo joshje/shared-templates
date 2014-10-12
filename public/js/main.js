@@ -1,10 +1,10 @@
 require.config({
     baseUrl: '/js',
     paths : {
-        text: 'lib/requirejs-text/requirejs-text',
+        text: 'lib/requirejs-text/text',
         hogan: 'lib/requirejs-hogan-plugin/hogan',
         hgn: 'lib/requirejs-hogan-plugin/hgn',
-        md5: 'lib/md5-jkmyers/md5-jkmyers'
+        md5: 'lib/md5-jkmyers/md5.min'
     }
 });
 
