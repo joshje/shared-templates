@@ -2,6 +2,8 @@
 
 This code base was created for a tutorial in .Net magazine on sharing the same template files between server and client.
 
+You can see this node server running at [http://shared-templates.joshemerson.co.uk](http://shared-templates.joshemerson.co.uk).
+
 ## Installation
 
 1. Clone this repo
@@ -21,9 +23,8 @@ This code base was created for a tutorial in .Net magazine on sharing the same t
 6. Run the server
 
        node app.js
-	  
+
 
 ## Tutorial Branch
 
 If you are following the tutorial (available in .Net magazine), checkout the `tutorial` branch, which does not contain files which you will write as you follow the tutorial. If you simply want to run the project, choose the `master` branch.
-
