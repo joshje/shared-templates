@@ -43,6 +43,8 @@ app.get('/hello', function(req, res) {
 
 // Make the /templates folder available to the web at /templates
 app.use('/templates', express.static(__dirname + '/templates'));
+// Make bower components available at /bower_components
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 // Make the /public folder available to the web at /
 app.use(express.static(__dirname + '/public'));
 

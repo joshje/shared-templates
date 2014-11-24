@@ -10,7 +10,6 @@
   ],
   "dependencies": {
     "requirejs": "~2.1.15",
-    "requirejs-text": "requirejs/text#~2.0.12",
     "requirejs-hogan-plugin": "~0.3.1",
     "md5-jkmyers": "~0.0.1"
   }

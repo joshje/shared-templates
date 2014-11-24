@@ -2,60 +2,45 @@
 require.config({
     baseUrl: '/js',
         paths : {
-        text: 'lib/requirejs-text/text',
-        hogan: 'lib/requirejs-hogan-plugin/hogan',
-        hgn: 'lib/requirejs-hogan-plugin/hgn',
-        md5: 'lib/md5-jkmyers/md5.min'
+        text: '/bower_components/requirejs-hogan-plugin/text',
+        hogan: '/bower_components/requirejs-hogan-plugin/hogan',
+        hgn: '/bower_components/requirejs-hogan-plugin/hgn',
+        md5: '/bower_components/md5-jkmyers/md5.min'
     }
 });
 
 // Require the modules we need here:
 require([
-    'ajax',
-    'md5',
+    'gravatar',
     'routes'
 ], function(
-    ajax,
-    md5,
+    gravatar,
     routes
 ) {
     var content = document.querySelector('.content'); // We will bind events to this element
-    var users = {}; // To cache users returned from Gravatar
-    // Use a larger image size on retina screens:
-    var imageSize = (window.devicePixelRatio > 1.5) ? 400 : 200;
 
-    // Get a user from the cache, or Gravatar API
-    var getUser = function(email) {
-        // Generate a hash from the email
-        var hash = md5(email.replace(/^\s+|\s+$/g, ''));
-        // Return the user if we already have them
-        if (users[hash]) return routes.render('/hello', users[hash]);
+    // Get a user from Gravatar and then render them
+    var renderUser = function(email) {
+      // Render the loading screen
+      routes.loading();
 
-        routes.loading(); // Render the loading screen
-        ajax('http://en.gravatar.com/' + hash + '.json', function(res) {
-            // On success, render the /hello route
-            var user = res.entry[0];
-            user.thumbnailUrl += '?s=' + imageSize;
-            users[hash] = user;
-            var img = document.createElement('img');
-            img.addEventListener('load', function() {
-                routes.render('/hello', user);
-            });
-            img.src = user.thumbnailUrl;
-        }, function() {
-            // On error, render the / route with an error message
-            routes.render('/', {
-                error: true,
-                email: email
-            });
-        });
+      gravatar.getUser(email, function(error, user) {
+        if (error) {
+          routes.render('/', {
+              error: true,
+              email: email
+          });
+        } else {
+          routes.render('/hello', user);
+        }
+      });
     };
 
     // This event fires as a user navigates the history:
     window.addEventListener('popstate', function(e) {
         var state = e.state || {};
         if (state.getUser) {
-            getUser(state.getUser);
+            renderUser(state.email);
         } else {
             routes.render(window.location.pathname, state);
         }
@@ -84,10 +69,11 @@ require([
             }, '', '/');
             // Update the URL to the /hello page
             window.history.pushState({
-                getUser: email
+                getUser: true,
+                email: email
             }, '', '/hello?email=' + encodeURIComponent(email));
             // Get the new user
-            getUser(email);
+            renderUser(email);
         }
     }, true);
 });
