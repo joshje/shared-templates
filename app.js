@@ -48,7 +48,7 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 // Make the /public folder available to the web at /
 app.use(express.static(__dirname + '/public'));
 
-// Start our server on port 1234
-var server = app.listen(1234, function() {
+// Start our server on port 3000
+var server = app.listen(3000, function() {
     console.log('Listening on port %d', server.address().port);
 });
