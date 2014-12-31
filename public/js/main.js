@@ -1,11 +1,12 @@
 // Configure paths to our dependencies:
 require.config({
     baseUrl: '/js',
-        paths : {
+    paths : {
         text: '/bower_components/requirejs-hogan-plugin/text',
         hogan: '/bower_components/requirejs-hogan-plugin/hogan',
         hgn: '/bower_components/requirejs-hogan-plugin/hgn',
-        md5: '/bower_components/md5-jkmyers/md5.min'
+        md5: '/bower_components/md5-jkmyers/md5.min',
+        templates: '/templates'
     }
 });
 

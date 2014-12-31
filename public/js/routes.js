@@ -1,8 +1,8 @@
 // Require the templates we need
 define([
-    'hgn!../templates/form',
-    'hgn!../templates/hello',
-    'hgn!../templates/loading'
+    'hgn!templates/form',
+    'hgn!templates/hello',
+    'hgn!templates/loading'
 ],function(
     form,
     hello,

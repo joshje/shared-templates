@@ -27,4 +27,4 @@ You can see this node server running at [http://shared-templates.joshemerson.co.
 
 ## Tutorial Branch
 
-If you are following the tutorial (available in .Net magazine), checkout the `tutorial` branch, which does not contain files which you will write as you follow the tutorial. If you simply want to run the project, choose the `master` branch.
+If you are following the tutorial (available in the February issue of [net magazine](http://www.creativebloq.com/net-magazine)), checkout the `tutorial` branch, which does not contain files which you will write as you follow the tutorial. If you simply want to run the project, choose the `master` branch.
